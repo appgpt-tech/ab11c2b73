@@ -47,11 +47,10 @@ const ActivityTitle = () => {
 export const ActivityList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="activityId" />
+          <NumberField source="id" />
 <TextField source="description" />
-<TextField source="tutorName" />
-<TextField source="costPerLesson" />
-<NumberField source="id" /><EditButton />
+<TextField source="tutorsName" />
+<TextField source="costPerLesson" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -60,11 +59,10 @@ export const ActivityList = () => (
 export const ActivityEdit = () => (
                     <Edit title={<ActivityTitle />}>
                       <SimpleForm>
-                          <TextInput source="activityId"   />
+                          <NumberInput source="id"   disabled/>
 <TextInput source="description"   />
-<TextInput source="tutorName"   />
+<TextInput source="tutorsName"   />
 <TextInput source="costPerLesson"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -72,18 +70,16 @@ export const ActivityEdit = () => (
 export const ActivityCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="activityId"   />
+                                        <NumberInput source="id"   disabled/>
 <TextInput source="description"   />
-<TextInput source="tutorName"   />
+<TextInput source="tutorsName"   />
 <TextInput source="costPerLesson"   />
-<NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
 ,
 ,
 ,
