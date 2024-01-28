@@ -13,10 +13,10 @@ date: string;
 time: string;
 
 @Column({nullable: true})
-studentId: string;
+studentid: string;
 
 @Column({nullable: true})
-activityId: string;
+activityid: string;
 
 
 }
