@@ -10,8 +10,16 @@ import LoginPage, { Login } from "./Login";
 import data from "./data";
 import { ProductsList, ProductsCreate, ProductsEdit} from "./resources/Products";
 import { ProductcategoriesList, ProductcategoriesCreate, ProductcategoriesEdit} from "./resources/Productcategories";
-import ProductsIcon from "@mui/icons-material/ProductionQuantityLimits";
-import ProductcategoriesIcon from "@mui/icons-material/Category"; 
+import { CustomersList, CustomersCreate, CustomersEdit} from "./resources/Customers";
+import { OrdersList, OrdersCreate, OrdersEdit} from "./resources/Orders";
+import { OrderdetailsList, OrderdetailsCreate, OrderdetailsEdit} from "./resources/Orderdetails";
+import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
+import ProductsIcon from "@mui/icons-material/Storefront";
+import ProductcategoriesIcon from "@mui/icons-material/Category";
+import CustomersIcon from "@mui/icons-material/People";
+import OrdersIcon from "@mui/icons-material/ShoppingCart";
+import OrderdetailsIcon from "@mui/icons-material/Receipt";
+import UsersIcon from "@mui/icons-material/Person"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -85,6 +93,30 @@ create={ProductcategoriesCreate}
 edit={ProductcategoriesEdit}
 recordRepresentation="id"
 icon={ProductcategoriesIcon}/>
+<Resource name="Customers" options={{label:"customers"}} 
+list={CustomersList}
+create={CustomersCreate}
+edit={CustomersEdit}
+recordRepresentation="name"
+icon={CustomersIcon}/>
+<Resource name="Orders" options={{label:"orders"}} 
+list={OrdersList}
+create={OrdersCreate}
+edit={OrdersEdit}
+recordRepresentation="id"
+icon={OrdersIcon}/>
+<Resource name="Orderdetails" options={{label:"orderDetails"}} 
+list={OrderdetailsList}
+create={OrderdetailsCreate}
+edit={OrderdetailsEdit}
+recordRepresentation="id"
+icon={OrderdetailsIcon}/>
+<Resource name="Users" options={{label:"users"}} 
+list={UsersList}
+create={UsersCreate}
+edit={UsersEdit}
+recordRepresentation="id"
+icon={UsersIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
