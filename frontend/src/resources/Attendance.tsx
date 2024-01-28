@@ -47,11 +47,11 @@ const AttendanceTitle = () => {
 export const AttendanceList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="id" />
+          <TextField source="id" />
 <TextField source="date" />
 <TextField source="time" />
-<TextField source="studentId" />
-<TextField source="activityId" /><EditButton />
+<TextField source="studentid" />
+<TextField source="activityid" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -60,11 +60,11 @@ export const AttendanceList = () => (
 export const AttendanceEdit = () => (
                     <Edit title={<AttendanceTitle />}>
                       <SimpleForm>
-                          <NumberInput source="id"   disabled/>
+                          <TextInput source="id"   disabled/>
 <TextInput source="date"   />
 <TextInput source="time"   />
-<TextInput source="studentId"   />
-<TextInput source="activityId"   />
+<TextInput source="studentid"   />
+<TextInput source="activityid"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -72,11 +72,11 @@ export const AttendanceEdit = () => (
 export const AttendanceCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="id"   disabled/>
+                                        <TextInput source="id"   disabled/>
 <TextInput source="date"   />
 <TextInput source="time"   />
-<TextInput source="studentId"   />
-<TextInput source="activityId"   />
+<TextInput source="studentid"   />
+<TextInput source="activityid"   />
                                     </SimpleForm>
                                   </Create>
                                 );
