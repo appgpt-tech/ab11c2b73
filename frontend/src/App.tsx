@@ -12,8 +12,8 @@ import { StudentList, StudentCreate, StudentEdit} from "./resources/Student";
 import { ActivityList, ActivityCreate, ActivityEdit} from "./resources/Activity";
 import { AttendanceList, AttendanceCreate, AttendanceEdit} from "./resources/Attendance";
 import StudentIcon from "@mui/icons-material/Person";
-import ActivityIcon from "@mui/icons-material/SportsEsports";
-import AttendanceIcon from "@mui/icons-material/EventAvailable"; 
+import ActivityIcon from "@mui/icons-material/SportsHandball";
+import AttendanceIcon from "@mui/icons-material/EventNote"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -79,7 +79,7 @@ const App = () => (
 list={StudentList}
 create={StudentCreate}
 edit={StudentEdit}
-recordRepresentation="name"
+recordRepresentation="id"
 icon={StudentIcon}/>
 <Resource name="Activity" options={{label:"activity"}} 
 list={ActivityList}
