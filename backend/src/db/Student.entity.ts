@@ -7,9 +7,6 @@ export class StudentEntity {
   id: number;
 
   @Column({nullable: true})
-studentId: string;
-
-@Column({nullable: true})
 name: string;
 
 
