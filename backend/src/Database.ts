@@ -26,7 +26,7 @@ export class Database {
     await Database.Seed();
   }
   static async Seed() {
-    let data: any = {"Student":[{"id":1,"name":"John Doe"},{"id":2,"name":"Jane Doe"},{"id":3,"name":"Steve Smith"}],"Activity":[{"id":1,"description":"Mathematics Tutoring","tutorsName":"Mr. James","costPerLesson":50},{"id":2,"description":"Music Lessons - Piano","tutorsName":"Mrs. Smith","costPerLesson":60},{"id":3,"description":"Swimming Lessons","tutorsName":"Coach Mike","costPerLesson":45}],"Attendance":[{"id":1,"date":"2022-01-01","time":"10:00:00","studentId":1,"activityId":3},{"id":2,"date":"2022-01-02","time":"14:00:00","studentId":2,"activityId":1},{"id":3,"date":"2022-01-01","time":"13:00:00","studentId":3,"activityId":2}]};
+    let data: any = {"Student":[{"id":1,"name":"John Doe"},{"id":2,"name":"Jane Doe"},{"id":3,"name":"Steve Smith"}],"Activity":[{"id":1,"description":"Soccer practice","tutorName":"Robert Green","costPerLesson":25},{"id":2,"description":"Guitar session","tutorName":"John Mayer","costPerLesson":30},{"id":3,"description":"Math tutoring","tutorName":"Marie Curie","costPerLesson":40}],"Attendance":[{"id":1,"date":"2022-01-01","time":"09:00:00","studentId":1,"activityId":1},{"id":2,"date":"2022-01-02","time":"10:00:00","studentId":2,"activityId":2},{"id":3,"date":"2022-01-03","time":"11:00:00","studentId":3,"activityId":3}]};
     //Autogenerate multiple such calls ie for each resource and its data object
     let isSeeded = await this.IsSeeded();
     //if (!isSeeded) {
