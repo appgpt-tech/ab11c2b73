@@ -10,7 +10,7 @@ export class ActivityEntity {
 description: string;
 
 @Column({nullable: true})
-tutorsName: string;
+tutorName: string;
 
 @Column({nullable: true})
 costPerLesson: string;
