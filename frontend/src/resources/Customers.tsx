@@ -51,6 +51,7 @@ export const CustomersList = () => (
 <TextField source="email" />
 <TextField source="password" />
 <TextField source="name" />
+<TextField source="lastOrderDate" />
 <NumberField source="id" /><EditButton />
 
         </DatagridConfigurable>
@@ -64,6 +65,7 @@ export const CustomersEdit = () => (
 <TextInput source="email"   />
 <TextInput source="password"   />
 <TextInput source="name"   />
+<TextInput source="lastOrderDate"   />
 <NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
@@ -76,6 +78,7 @@ export const CustomersCreate = () => (
 <TextInput source="email"   />
 <TextInput source="password"   />
 <TextInput source="name"   />
+<TextInput source="lastOrderDate"   />
 <NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
@@ -83,6 +86,7 @@ export const CustomersCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
 ,
 ,
 ,
