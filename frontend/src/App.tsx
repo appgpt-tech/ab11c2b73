@@ -9,17 +9,17 @@ import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
 import { ProductsList, ProductsCreate, ProductsEdit} from "./resources/Products";
-import { ProductCategoriesList, ProductCategoriesCreate, ProductCategoriesEdit} from "./resources/ProductCategories";
+import { ProductcategoriesList, ProductcategoriesCreate, ProductcategoriesEdit} from "./resources/Productcategories";
 import { CustomersList, CustomersCreate, CustomersEdit} from "./resources/Customers";
 import { OrdersList, OrdersCreate, OrdersEdit} from "./resources/Orders";
-import { OrderDetailsList, OrderDetailsCreate, OrderDetailsEdit} from "./resources/OrderDetails";
+import { OrderdetailsList, OrderdetailsCreate, OrderdetailsEdit} from "./resources/Orderdetails";
 import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
-import ProductsIcon from "@mui/icons-material/LocalMall";
-import ProductCategoriesIcon from "@mui/icons-material/Category";
+import ProductsIcon from "@mui/icons-material/ProductionQuantityLimits";
+import ProductcategoriesIcon from "@mui/icons-material/Category";
 import CustomersIcon from "@mui/icons-material/People";
-import OrdersIcon from "@mui/icons-material/ShoppingCart";
-import OrderDetailsIcon from "@mui/icons-material/Details";
-import UsersIcon from "@mui/icons-material/PeopleAlt"; 
+import OrdersIcon from "@mui/icons-material/Reorder";
+import OrderdetailsIcon from "@mui/icons-material/Details";
+import UsersIcon from "@mui/icons-material/Person"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -87,12 +87,12 @@ create={ProductsCreate}
 edit={ProductsEdit}
 recordRepresentation="name"
 icon={ProductsIcon}/>
-<Resource name="ProductCategories" options={{label:"productCategories"}} 
-list={ProductCategoriesList}
-create={ProductCategoriesCreate}
-edit={ProductCategoriesEdit}
+<Resource name="Productcategories" options={{label:"productCategories"}} 
+list={ProductcategoriesList}
+create={ProductcategoriesCreate}
+edit={ProductcategoriesEdit}
 recordRepresentation="id"
-icon={ProductCategoriesIcon}/>
+icon={ProductcategoriesIcon}/>
 <Resource name="Customers" options={{label:"customers"}} 
 list={CustomersList}
 create={CustomersCreate}
@@ -105,12 +105,12 @@ create={OrdersCreate}
 edit={OrdersEdit}
 recordRepresentation="id"
 icon={OrdersIcon}/>
-<Resource name="OrderDetails" options={{label:"orderDetails"}} 
-list={OrderDetailsList}
-create={OrderDetailsCreate}
-edit={OrderDetailsEdit}
+<Resource name="Orderdetails" options={{label:"orderDetails"}} 
+list={OrderdetailsList}
+create={OrderdetailsCreate}
+edit={OrderdetailsEdit}
 recordRepresentation="id"
-icon={OrderDetailsIcon}/>
+icon={OrderdetailsIcon}/>
 <Resource name="Users" options={{label:"users"}} 
 list={UsersList}
 create={UsersCreate}
