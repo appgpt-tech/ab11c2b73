@@ -7,10 +7,10 @@ export class AttendanceEntity {
   id: number;
 
   @Column({nullable: true})
-attendanceId: string;
+date: string;
 
 @Column({nullable: true})
-date: string;
+time: string;
 
 @Column({nullable: true})
 studentId: string;
