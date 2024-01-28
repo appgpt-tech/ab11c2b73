@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title= "lesson tracker" />
-      <CardContent> Provide parents with detailed tracking of their children's after school lessons or activities < /CardContent>
+      <CardHeader title= "student activity management" />
+      <CardContent> An app to manage student activities and attendance records in an academic institution. < /CardContent>
       </Card>
     );
