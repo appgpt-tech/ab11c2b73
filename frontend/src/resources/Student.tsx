@@ -47,8 +47,9 @@ const StudentTitle = () => {
 export const StudentList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="id" />
-<TextField source="name" /><EditButton />
+          <TextField source="id" />
+<TextField source="name" />
+<TextField source="surname" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -57,8 +58,9 @@ export const StudentList = () => (
 export const StudentEdit = () => (
                     <Edit title={<StudentTitle />}>
                       <SimpleForm>
-                          <NumberInput source="id"   disabled/>
+                          <TextInput source="id"   disabled/>
 <TextInput source="name"   />
+<TextInput source="surname"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -66,14 +68,16 @@ export const StudentEdit = () => (
 export const StudentCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="id"   disabled/>
+                                        <TextInput source="id"   disabled/>
 <TextInput source="name"   />
+<TextInput source="surname"   />
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
 ,
 
     ];
