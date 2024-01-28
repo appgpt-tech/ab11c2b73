@@ -50,8 +50,8 @@ export const AttendanceList = () => (
           <NumberField source="id" />
 <TextField source="date" />
 <TextField source="time" />
-<NumberField source="studentId" />
-<NumberField source="activityId" /><EditButton />
+<TextField source="studentId" />
+<TextField source="activityId" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -63,8 +63,8 @@ export const AttendanceEdit = () => (
                           <NumberInput source="id"   disabled/>
 <TextInput source="date"   />
 <TextInput source="time"   />
-<NumberInput source="studentId"   />
-<NumberInput source="activityId"   />
+<TextInput source="studentId"   />
+<TextInput source="activityId"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -75,8 +75,8 @@ export const AttendanceCreate = () => (
                                         <NumberInput source="id"   disabled/>
 <TextInput source="date"   />
 <TextInput source="time"   />
-<NumberInput source="studentId"   />
-<NumberInput source="activityId"   />
+<TextInput source="studentId"   />
+<TextInput source="activityId"   />
                                     </SimpleForm>
                                   </Create>
                                 );
