@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title= "Libby" />
-      <CardContent> A book archive app < /CardContent>
+      <CardHeader title= "booklio" />
+      <CardContent> book archive system < /CardContent>
       </Card>
     );
