@@ -9,5 +9,8 @@ export class BooksEntity {
   @Column({nullable: true})
 title: string;
 
+@Column({nullable: true})
+serial: string;
+
 
 }
