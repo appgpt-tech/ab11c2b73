@@ -1,3 +1,3 @@
 
-let data: any = {"defaultData":{"Books":[{"title":"Book title 1"},{"title":"Book title 2"},{"title":"Book title 3"}]}};
+let data: any = {"defaultData":{"Books":[{"title":"Harry Potter and the Philosopher's Stone","serial":"HP1"},{"title":"To Kill a Mockingbird","serial":"TKM"},{"title":"Pride and Prejudice","serial":"PAP"}]}};
 export default data;
