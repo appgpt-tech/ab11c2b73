@@ -4,8 +4,8 @@
     import enOriginal from 'ra-language-english';
 import frOriginal from 'ra-language-french';
 
-    const enResources = { resources: {"Books":{"name":"Books","fields":{"Title":"Title","Serial":"Serial","id":"id"}}}};
-const frResources = { resources: {"Books":{"name":"Livres","fields":{"Title":"Titre","Serial":"Série","id":"id"}}}};
+    const enResources = { resources: {"Users":{"name":"Users","fields":{"user_id":"User ID","name":"Name","email":"Email","id":"id"}},"Customers":{"name":"Customers","fields":{"customer_id":"Customer ID","name":"Name","email":"Email","id":"id"}}}};
+const frResources = { resources: {"Users":{"name":"Utilisateurs","fields":{"user_id":"ID Utilisateur","name":"Nom","email":"Email","id":"id"}},"Customers":{"name":"Clients","fields":{"customer_id":"ID Client","name":"Nom","email":"Email","id":"id"}}}};
 
 
     const en = mergeTranslations(enOriginal,enResources);
