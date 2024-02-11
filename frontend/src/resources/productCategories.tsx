@@ -57,7 +57,7 @@ const productCategoriesTitle = () => {
 export const productCategoriesList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <EditButton />
+          <TextField source="description" /><EditButton />
 
         </DatagridConfigurable>
       </List>
