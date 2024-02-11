@@ -6,7 +6,7 @@ import postgrestRestProvider from "@promitheus/ra-data-postgrest";
 import qs from 'qs';
 
 const fieldConfig = {
-    users: [
+    Users: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -28,7 +28,7 @@ const fieldConfig = {
     "datatype": "String"
   }
 ],
-vendors: [
+Vendors: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -50,7 +50,7 @@ vendors: [
     "datatype": "String"
   }
 ],
-customers: [
+Customers: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -84,7 +84,7 @@ customers: [
     "datatype": "String"
   }
 ],
-inventory: [
+Inventory: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -106,7 +106,7 @@ inventory: [
     "datatype": "Integer"
   }
 ],
-products: [
+Products: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -148,7 +148,7 @@ products: [
     "datatype": "DateTime"
   }
 ],
-productCategories: [
+ProductCategories: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -158,13 +158,13 @@ productCategories: [
     "datatype": "String"
   }
 ],
-discounts: [
+Discounts: [
   {
     "field": "id",
     "datatype": "Integer"
   },
   {
-    "field": "product_id",
+    "field": "productId",
     "datatype": "Integer"
   },
   {
@@ -184,7 +184,7 @@ discounts: [
     "datatype": "Real"
   }
 ],
-shoppingCarts: [
+ShoppingCarts: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -206,7 +206,7 @@ shoppingCarts: [
     "datatype": "Integer"
   }
 ],
-orders: [
+Orders: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -256,7 +256,7 @@ orders: [
     "datatype": "String"
   }
 ],
-orderDetails: [
+OrderDetails: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -278,7 +278,7 @@ orderDetails: [
     "datatype": "Integer"
   }
 ],
-payments: [
+Payments: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -304,7 +304,7 @@ payments: [
     "datatype": "String"
   }
 ],
-reviews: [
+Reviews: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -323,7 +323,7 @@ reviews: [
   },
   {
     "field": "rating",
-    "datatype": "Integer"
+    "datatype": "Real"
   },
   {
     "field": "reviewDetails",
@@ -334,7 +334,7 @@ reviews: [
     "datatype": "DateTime"
   }
 ],
-supportTickets: [
+SupportTickets: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -360,7 +360,7 @@ supportTickets: [
     "datatype": "DateTime"
   },
   {
-    "field": "resolutionDate",
+    "field": "lastUpdateDate",
     "datatype": "DateTime"
   }
 ]
