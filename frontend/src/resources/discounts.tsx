@@ -51,13 +51,13 @@ const ListActions = () => (
 );
 const discountsTitle = () => {
   const record = useRecordContext();
-  return <span>discounts {record ? `"${ record.discountName }"` : ""}</span>;
+  return <span>discounts {record ? `"${ record.id }"` : ""}</span>;
 };
 
 export const discountsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="product_id" />
+          <ReferenceField source="productId" reference="products"  />
 <TextField source="discountName" />
 
 <NumberField source="discountAmount" />
@@ -70,7 +70,7 @@ export const discountsList = () => (
 export const discountsEdit = () => (
                     <Edit title={<discountsTitle />}>
                       <SimpleForm>
-                          <NumberInput source="product_id"   />
+                          <ReferenceInput source="productId"  reference="products"   />
 <TextInput source="discountName"   />
 <TextInput source="description"   />
 <NumberInput source="discountAmount"   />
@@ -82,7 +82,7 @@ export const discountsEdit = () => (
 export const discountsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="product_id"   />
+                                        <ReferenceInput source="productId"  reference="products"   />
 <TextInput source="discountName"   />
 <TextInput source="description"   />
 <NumberInput source="discountAmount"   />
@@ -94,7 +94,7 @@ export const discountsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-,
+<ReferenceInput source="productId" label="productId" reference="products"   alwaysOn/>,
 ,
 ,
 ,
