@@ -51,13 +51,14 @@ const ListActions = () => (
 );
 const OrdersTitle = () => {
   const record = useRecordContext();
-  return <span>Orders {record ? `"${ record.customerId }"` : ""}</span>;
+  return <span>Orders {record ? `"${ record.orderId }"` : ""}</span>;
 };
 
 export const OrdersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <ReferenceField source="customerId" reference="Customers"  />
+          <NumberField source="orderId" />
+<ReferenceField source="customerId" reference="Customers"  />
 <NumberField source="totalAmount" />
 <NumberField source="vat" />
 <NumberField source="productTotalAmount" />
@@ -76,7 +77,8 @@ export const OrdersList = () => (
 export const OrdersEdit = () => (
                     <Edit title={<OrdersTitle />}>
                       <SimpleForm>
-                          <ReferenceInput source="customerId"  reference="Customers"   />
+                          <NumberInput source="orderId"   />
+<ReferenceInput source="customerId"  reference="Customers"   />
 <NumberInput source="totalAmount"   />
 <NumberInput source="vat"   />
 <NumberInput source="productTotalAmount"   />
@@ -94,7 +96,8 @@ export const OrdersEdit = () => (
 export const OrdersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <ReferenceInput source="customerId"  reference="Customers"   />
+                                        <NumberInput source="orderId"   />
+<ReferenceInput source="customerId"  reference="Customers"   />
 <NumberInput source="totalAmount"   />
 <NumberInput source="vat"   />
 <NumberInput source="productTotalAmount"   />
@@ -113,6 +116,7 @@ const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
 <ReferenceInput source="customerId" label="customerId" reference="Customers"   alwaysOn/>,
+,
 ,
 ,
 ,
