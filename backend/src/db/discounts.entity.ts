@@ -7,7 +7,7 @@ export class discountsEntity {
   id: number;
 
   @Column("integer",{nullable: true})
-product_id: number;
+productId: number;
 
 @Column("text",{nullable: true})
 discountName: string;
