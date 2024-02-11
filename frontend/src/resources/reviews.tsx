@@ -51,15 +51,15 @@ const ListActions = () => (
 );
 const reviewsTitle = () => {
   const record = useRecordContext();
-  return <span>reviews {record ? `"${ record.productId }"` : ""}</span>;
+  return <span>reviews {record ? `"${ record.id }"` : ""}</span>;
 };
 
 export const reviewsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="productId" />
-<NumberField source="customerId" />
-<NumberField source="vendorId" />
+          <ReferenceField source="productId" reference="products"  />
+<ReferenceField source="customerId" reference="customers"  />
+<ReferenceField source="vendorId" reference="vendors"  />
 <NumberField source="rating" />
 
 <DateField source="date" /><EditButton />
@@ -71,9 +71,9 @@ export const reviewsList = () => (
 export const reviewsEdit = () => (
                     <Edit title={<reviewsTitle />}>
                       <SimpleForm>
-                          <NumberInput source="productId"   />
-<NumberInput source="customerId"   />
-<NumberInput source="vendorId"   />
+                          <ReferenceInput source="productId"  reference="products"   />
+<ReferenceInput source="customerId"  reference="customers"   />
+<ReferenceInput source="vendorId"  reference="vendors"   />
 <NumberInput source="rating"   />
 <TextInput source="reviewDetails"   />
 <DateInput source="date"   />
@@ -84,9 +84,9 @@ export const reviewsEdit = () => (
 export const reviewsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="productId"   />
-<NumberInput source="customerId"   />
-<NumberInput source="vendorId"   />
+                                        <ReferenceInput source="productId"  reference="products"   />
+<ReferenceInput source="customerId"  reference="customers"   />
+<ReferenceInput source="vendorId"  reference="vendors"   />
 <NumberInput source="rating"   />
 <TextInput source="reviewDetails"   />
 <DateInput source="date"   />
@@ -97,9 +97,9 @@ export const reviewsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-,
-,
-,
+<ReferenceInput source="productId" label="productId" reference="products"   alwaysOn/>,
+<ReferenceInput source="customerId" label="customerId" reference="customers"   alwaysOn/>,
+<ReferenceInput source="vendorId" label="vendorId" reference="vendors"   alwaysOn/>,
 ,
 ,
 
