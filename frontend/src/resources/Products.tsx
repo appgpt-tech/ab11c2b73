@@ -51,21 +51,23 @@ const ListActions = () => (
 );
 const ProductsTitle = () => {
   const record = useRecordContext();
-  return <span>Products {record ? `"${ record.name }"` : ""}</span>;
+  return <span>Products {record ? `"${ record.productId }"` : ""}</span>;
 };
 
 export const ProductsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <ReferenceField source="vendorId" reference="Vendors"  />
+          <NumberField source="productId" />
+<ReferenceField source="vendorId" reference="Vendors"  />
 <TextField source="name" />
 <NumberField source="price" />
 <NumberField source="weight" />
 
 <ImageField source="thumbnail" />
 <ImageField source="image" />
-<TextField source="category" />
-<DateField source="createdDate" /><EditButton />
+<ReferenceField source="category" reference="ProductCategories"  />
+<DateField source="createDate" />
+<NumberField source="stock" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -74,15 +76,17 @@ export const ProductsList = () => (
 export const ProductsEdit = () => (
                     <Edit title={<ProductsTitle />}>
                       <SimpleForm>
-                          <ReferenceInput source="vendorId"  reference="Vendors"   />
+                          <NumberInput source="productId"   />
+<ReferenceInput source="vendorId"  reference="Vendors"   />
 <TextInput source="name"   />
 <NumberInput source="price"   />
 <NumberInput source="weight"   />
 <TextInput source="description"   />
 <ImageInput source="thumbnail"   />
 <ImageInput source="image"   />
-<TextInput source="category"   />
-<DateInput source="createdDate"   />
+<ReferenceInput source="category"  reference="ProductCategories"   />
+<DateInput source="createDate"   />
+<NumberInput source="stock"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -90,15 +94,17 @@ export const ProductsEdit = () => (
 export const ProductsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <ReferenceInput source="vendorId"  reference="Vendors"   />
+                                        <NumberInput source="productId"   />
+<ReferenceInput source="vendorId"  reference="Vendors"   />
 <TextInput source="name"   />
 <NumberInput source="price"   />
 <NumberInput source="weight"   />
 <TextInput source="description"   />
 <ImageInput source="thumbnail"   />
 <ImageInput source="image"   />
-<TextInput source="category"   />
-<DateInput source="createdDate"   />
+<ReferenceInput source="category"  reference="ProductCategories"   />
+<DateInput source="createDate"   />
+<NumberInput source="stock"   />
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -112,6 +118,8 @@ const ResourceFilters = [
 ,
 ,
 ,
+,
+<ReferenceInput source="category" label="category" reference="ProductCategories"   alwaysOn/>,
 ,
 ,
 
