@@ -12,63 +12,7 @@ const fieldConfig = {
     "datatype": "Integer"
   },
   {
-    "field": "name",
-    "datatype": "String"
-  },
-  {
     "field": "email",
-    "datatype": "String"
-  },
-  {
-    "field": "password",
-    "datatype": "String"
-  },
-  {
-    "field": "role",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Vendors: [
-  {
-    "field": "vendorId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "companyName",
-    "datatype": "String"
-  },
-  {
-    "field": "contactName",
-    "datatype": "String"
-  },
-  {
-    "field": "email",
-    "datatype": "String"
-  },
-  {
-    "field": "password",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Customers: [
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "email",
-    "datatype": "String"
-  },
-  {
-    "field": "password",
     "datatype": "String"
   },
   {
@@ -76,23 +20,63 @@ Customers: [
     "datatype": "String"
   },
   {
-    "field": "billingAddress",
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Cards: [
+  {
+    "field": "cardId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "setId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "cardName",
     "datatype": "String"
   },
   {
-    "field": "defaultShippingAddress",
+    "field": "serial",
     "datatype": "String"
   },
   {
-    "field": "country",
+    "field": "type",
     "datatype": "String"
   },
   {
-    "field": "phone",
+    "field": "rarity",
     "datatype": "String"
   },
   {
-    "field": "cartId",
+    "field": "condition",
+    "datatype": "String"
+  },
+  {
+    "field": "imageUrl",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Sets: [
+  {
+    "field": "setId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "setName",
+    "datatype": "String"
+  },
+  {
+    "field": "releaseDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "totalCards",
     "datatype": "Integer"
   },
   {
@@ -102,275 +86,15 @@ Customers: [
 ],
 Inventory: [
   {
-    "field": "productId",
+    "field": "userId",
     "datatype": "Integer"
   },
   {
-    "field": "quantity",
+    "field": "cardId",
     "datatype": "Integer"
   },
   {
-    "field": "lowStockThreshold",
-    "datatype": "Integer"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Products: [
-  {
-    "field": "productId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "vendorId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "name",
-    "datatype": "String"
-  },
-  {
-    "field": "price",
-    "datatype": "Real"
-  },
-  {
-    "field": "weight",
-    "datatype": "Real"
-  },
-  {
-    "field": "description",
-    "datatype": "String"
-  },
-  {
-    "field": "thumbnail",
-    "datatype": "String"
-  },
-  {
-    "field": "image",
-    "datatype": "String"
-  },
-  {
-    "field": "category",
-    "datatype": "Integer"
-  },
-  {
-    "field": "createDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "stock",
-    "datatype": "Integer"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-ProductCategories: [
-  {
-    "field": "categoryId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "productId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "description",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Discounts: [
-  {
-    "field": "productId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "discountName",
-    "datatype": "String"
-  },
-  {
-    "field": "description",
-    "datatype": "String"
-  },
-  {
-    "field": "discountAmount",
-    "datatype": "Real"
-  },
-  {
-    "field": "discountPercent",
-    "datatype": "Real"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-ShoppingCart: [
-  {
-    "field": "cartId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "productId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "price",
-    "datatype": "Real"
-  },
-  {
-    "field": "quantity",
-    "datatype": "Integer"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Orders: [
-  {
-    "field": "orderId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "totalAmount",
-    "datatype": "Real"
-  },
-  {
-    "field": "vat",
-    "datatype": "Real"
-  },
-  {
-    "field": "productTotalAmount",
-    "datatype": "Real"
-  },
-  {
-    "field": "shippingCost",
-    "datatype": "Real"
-  },
-  {
-    "field": "shippingAddress",
-    "datatype": "String"
-  },
-  {
-    "field": "orderAddress",
-    "datatype": "String"
-  },
-  {
-    "field": "orderEmail",
-    "datatype": "String"
-  },
-  {
-    "field": "orderDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "orderStatus",
-    "datatype": "String"
-  },
-  {
-    "field": "trackingNo",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-OrderDetails: [
-  {
-    "field": "orderId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "productId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "price",
-    "datatype": "Real"
-  },
-  {
-    "field": "quantity",
-    "datatype": "Integer"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Payments: [
-  {
-    "field": "paymentId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "orderId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "amount",
-    "datatype": "Real"
-  },
-  {
-    "field": "paymentMethod",
-    "datatype": "String"
-  },
-  {
-    "field": "paymentDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "paymentStatus",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Reviews: [
-  {
-    "field": "reviewId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "productId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "customerId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "vendorId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "rating",
-    "datatype": "Real"
-  },
-  {
-    "field": "reviewDetails",
-    "datatype": "String"
-  },
-  {
-    "field": "date",
+    "field": "recordedDate",
     "datatype": "DateTime"
   },
   {
@@ -378,33 +102,17 @@ Reviews: [
     "datatype": "Integer"
   }
 ],
-SupportTickets: [
-  {
-    "field": "ticketId",
-    "datatype": "Integer"
-  },
+Wishlist: [
   {
     "field": "userId",
     "datatype": "Integer"
   },
   {
-    "field": "customerId",
+    "field": "cardId",
     "datatype": "Integer"
   },
   {
-    "field": "description",
-    "datatype": "String"
-  },
-  {
-    "field": "status",
-    "datatype": "String"
-  },
-  {
-    "field": "creationDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "resolutionDate",
+    "field": "insertedDate",
     "datatype": "DateTime"
   },
   {
