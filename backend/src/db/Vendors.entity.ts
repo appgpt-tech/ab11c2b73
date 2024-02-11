@@ -6,7 +6,10 @@ export class VendorsEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column("text",{nullable: true})
+  @Column("integer",{nullable: true})
+vendorId: number;
+
+@Column("text",{nullable: true})
 companyName: string;
 
 @Column("text",{nullable: true})
