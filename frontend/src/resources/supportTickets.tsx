@@ -57,12 +57,12 @@ const supportTicketsTitle = () => {
 export const supportTicketsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="userId" />
-<NumberField source="customerId" />
+          <ReferenceField source="userId" reference="users"  />
+<ReferenceField source="customerId" reference="customers"  />
 
 <TextField source="status" />
 <DateField source="creationDate" />
-<DateField source="resolutionDate" /><EditButton />
+<DateField source="lastUpdateDate" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -71,12 +71,12 @@ export const supportTicketsList = () => (
 export const supportTicketsEdit = () => (
                     <Edit title={<supportTicketsTitle />}>
                       <SimpleForm>
-                          <NumberInput source="userId"   />
-<NumberInput source="customerId"   />
+                          <ReferenceInput source="userId"  reference="users"   />
+<ReferenceInput source="customerId"  reference="customers"   />
 <TextInput source="description"   />
 <TextInput source="status"   />
 <DateInput source="creationDate"   />
-<DateInput source="resolutionDate"   />
+<DateInput source="lastUpdateDate"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -84,12 +84,12 @@ export const supportTicketsEdit = () => (
 export const supportTicketsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="userId"   />
-<NumberInput source="customerId"   />
+                                        <ReferenceInput source="userId"  reference="users"   />
+<ReferenceInput source="customerId"  reference="customers"   />
 <TextInput source="description"   />
 <TextInput source="status"   />
 <DateInput source="creationDate"   />
-<DateInput source="resolutionDate"   />
+<DateInput source="lastUpdateDate"   />
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -97,8 +97,8 @@ export const supportTicketsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-,
-,
+<ReferenceInput source="userId" label="userId" reference="users"   alwaysOn/>,
+<ReferenceInput source="customerId" label="customerId" reference="customers"   alwaysOn/>,
 ,
 ,
 ,
