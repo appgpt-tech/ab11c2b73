@@ -22,7 +22,7 @@ status: string;
 creationDate: Date;
 
 @Column("date",{nullable: true})
-resolutionDate: Date;
+lastUpdateDate: Date;
 
 
 }
