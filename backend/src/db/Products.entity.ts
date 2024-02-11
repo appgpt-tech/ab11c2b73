@@ -7,6 +7,9 @@ export class ProductsEntity {
   id: number;
 
   @Column("integer",{nullable: true})
+productId: number;
+
+@Column("integer",{nullable: true})
 vendorId: number;
 
 @Column("text",{nullable: true})
@@ -27,11 +30,14 @@ thumbnail: string;
 @Column("text",{nullable: true})
 image: string;
 
-@Column("text",{nullable: true})
-category: string;
+@Column("integer",{nullable: true})
+category: number;
 
 @Column("date",{nullable: true})
-createdDate: Date;
+createDate: Date;
+
+@Column("integer",{nullable: true})
+stock: number;
 
 
 }
