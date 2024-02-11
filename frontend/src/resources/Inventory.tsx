@@ -59,7 +59,6 @@ export const InventoryList = () => (
         <DatagridConfigurable>
           <ReferenceField source="productId" reference="Products"  />
 <NumberField source="quantity" />
-<ReferenceField source="vendorId" reference="Vendors"  />
 <NumberField source="lowStockThreshold" /><EditButton />
 
         </DatagridConfigurable>
@@ -71,7 +70,6 @@ export const InventoryEdit = () => (
                       <SimpleForm>
                           <ReferenceInput source="productId"  reference="Products"   />
 <NumberInput source="quantity"   />
-<ReferenceInput source="vendorId"  reference="Vendors"   />
 <NumberInput source="lowStockThreshold"   />
                       </SimpleForm>
                     </Edit>
@@ -82,7 +80,6 @@ export const InventoryCreate = () => (
                                     <SimpleForm>
                                         <ReferenceInput source="productId"  reference="Products"   />
 <NumberInput source="quantity"   />
-<ReferenceInput source="vendorId"  reference="Vendors"   />
 <NumberInput source="lowStockThreshold"   />
                                     </SimpleForm>
                                   </Create>
@@ -90,10 +87,9 @@ export const InventoryCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
 <ReferenceInput source="productId" label="productId" reference="Products"   alwaysOn/>,
 ,
-<ReferenceInput source="vendorId" label="vendorId" reference="Vendors"   alwaysOn/>,
+,
 
     ];
 
