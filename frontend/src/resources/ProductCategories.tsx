@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -41,14 +51,13 @@ const ListActions = () => (
 );
 const ProductCategoriesTitle = () => {
   const record = useRecordContext();
-  return <span>ProductCategories {record ? `"${ record.id }"` : ""}</span>;
+  return <span>ProductCategories {record ? `"${ record.description }"` : ""}</span>;
 };
 
 export const ProductCategoriesList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="id" />
-<TextField source="categoryDescription" /><EditButton />
+          <TextField source="description" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -57,8 +66,7 @@ export const ProductCategoriesList = () => (
 export const ProductCategoriesEdit = () => (
                     <Edit title={<ProductCategoriesTitle />}>
                       <SimpleForm>
-                          <TextInput source="id"   disabled/>
-<TextInput source="categoryDescription"   />
+                          <TextInput source="description"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -66,8 +74,7 @@ export const ProductCategoriesEdit = () => (
 export const ProductCategoriesCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="id"   disabled/>
-<TextInput source="categoryDescription"   />
+                                        <TextInput source="description"   />
                                     </SimpleForm>
                                   </Create>
                                 );
