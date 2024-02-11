@@ -90,9 +90,9 @@ export const OrderDetailsCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
 <ReferenceInput source="orderId" label="orderId" reference="Orders"   alwaysOn/>,
 <ReferenceInput source="productId" label="productId" reference="Products"   alwaysOn/>,
+,
 ,
 
     ];
