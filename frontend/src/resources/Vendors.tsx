@@ -51,13 +51,14 @@ const ListActions = () => (
 );
 const VendorsTitle = () => {
   const record = useRecordContext();
-  return <span>Vendors {record ? `"${ record.companyName }"` : ""}</span>;
+  return <span>Vendors {record ? `"${ record.vendorId }"` : ""}</span>;
 };
 
 export const VendorsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="companyName" />
+          <NumberField source="vendorId" />
+<TextField source="companyName" />
 <TextField source="contactName" />
 <EmailField source="email" />
 <ReadOnlyPasswordField source="password" /><EditButton />
@@ -69,7 +70,8 @@ export const VendorsList = () => (
 export const VendorsEdit = () => (
                     <Edit title={<VendorsTitle />}>
                       <SimpleForm>
-                          <TextInput source="companyName"   />
+                          <NumberInput source="vendorId"   />
+<TextInput source="companyName"   />
 <TextInput source="contactName"   />
 <TextInput source="email"   />
 <PasswordInput source="password"   />
@@ -80,7 +82,8 @@ export const VendorsEdit = () => (
 export const VendorsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="companyName"   />
+                                        <NumberInput source="vendorId"   />
+<TextInput source="companyName"   />
 <TextInput source="contactName"   />
 <TextInput source="email"   />
 <PasswordInput source="password"   />
@@ -90,6 +93,7 @@ export const VendorsCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
 ,
 ,
 ,
