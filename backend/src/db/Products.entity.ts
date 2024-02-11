@@ -6,38 +6,32 @@ export class ProductsEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-productId: string;
+  @Column("integer",{nullable: true})
+vendorId: number;
 
-@Column({nullable: true})
-sku: string;
-
-@Column({nullable: true})
+@Column("text",{nullable: true})
 name: string;
 
-@Column({nullable: true})
-price: string;
+@Column("real",{nullable: true})
+price: number;
 
-@Column({nullable: true})
-weight: string;
+@Column("real",{nullable: true})
+weight: number;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 description: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 thumbnail: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 image: string;
 
-@Column({nullable: true})
-categoryId: string;
+@Column("text",{nullable: true})
+category: string;
 
-@Column({nullable: true})
-createDate: string;
-
-@Column({nullable: true})
-stock: string;
+@Column("date",{nullable: true})
+createdDate: Date;
 
 
 }
