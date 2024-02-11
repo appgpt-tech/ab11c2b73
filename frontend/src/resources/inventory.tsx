@@ -51,15 +51,15 @@ const ListActions = () => (
 );
 const inventoryTitle = () => {
   const record = useRecordContext();
-  return <span>inventory {record ? `"${ record.productId }"` : ""}</span>;
+  return <span>inventory {record ? `"${ record.id }"` : ""}</span>;
 };
 
 export const inventoryList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="productId" />
+          <ReferenceField source="productId" reference="products"  />
 <NumberField source="quantity" />
-<NumberField source="vendorId" />
+<ReferenceField source="vendorId" reference="vendors"  />
 <NumberField source="lowStockThreshold" /><EditButton />
 
         </DatagridConfigurable>
@@ -69,9 +69,9 @@ export const inventoryList = () => (
 export const inventoryEdit = () => (
                     <Edit title={<inventoryTitle />}>
                       <SimpleForm>
-                          <NumberInput source="productId"   />
+                          <ReferenceInput source="productId"  reference="products"   />
 <NumberInput source="quantity"   />
-<NumberInput source="vendorId"   />
+<ReferenceInput source="vendorId"  reference="vendors"   />
 <NumberInput source="lowStockThreshold"   />
                       </SimpleForm>
                     </Edit>
@@ -80,9 +80,9 @@ export const inventoryEdit = () => (
 export const inventoryCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="productId"   />
+                                        <ReferenceInput source="productId"  reference="products"   />
 <NumberInput source="quantity"   />
-<NumberInput source="vendorId"   />
+<ReferenceInput source="vendorId"  reference="vendors"   />
 <NumberInput source="lowStockThreshold"   />
                                     </SimpleForm>
                                   </Create>
@@ -91,9 +91,9 @@ export const inventoryCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
+<ReferenceInput source="productId" label="productId" reference="products"   alwaysOn/>,
 ,
-,
-,
+<ReferenceInput source="vendorId" label="vendorId" reference="vendors"   alwaysOn/>,
 
     ];
 
