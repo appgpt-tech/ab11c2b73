@@ -6,7 +6,7 @@ import postgrestRestProvider from "@promitheus/ra-data-postgrest";
 import qs from 'qs';
 
 const fieldConfig = {
-    Users: [
+    users: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -28,7 +28,7 @@ const fieldConfig = {
     "datatype": "String"
   }
 ],
-Vendors: [
+vendors: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -50,7 +50,7 @@ Vendors: [
     "datatype": "String"
   }
 ],
-Customers: [
+customers: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -84,7 +84,7 @@ Customers: [
     "datatype": "String"
   }
 ],
-Inventory: [
+inventory: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -106,7 +106,7 @@ Inventory: [
     "datatype": "Integer"
   }
 ],
-Products: [
+products: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -141,14 +141,14 @@ Products: [
   },
   {
     "field": "category",
-    "datatype": "String"
+    "datatype": "Integer"
   },
   {
     "field": "createdDate",
     "datatype": "DateTime"
   }
 ],
-ProductCategories: [
+productCategories: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -158,7 +158,7 @@ ProductCategories: [
     "datatype": "String"
   }
 ],
-Discounts: [
+discounts: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -184,7 +184,7 @@ Discounts: [
     "datatype": "Real"
   }
 ],
-ShoppingCarts: [
+shoppingCarts: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -206,7 +206,7 @@ ShoppingCarts: [
     "datatype": "Integer"
   }
 ],
-Orders: [
+orders: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -256,7 +256,7 @@ Orders: [
     "datatype": "String"
   }
 ],
-OrderDetails: [
+orderDetails: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -278,7 +278,7 @@ OrderDetails: [
     "datatype": "Integer"
   }
 ],
-Payments: [
+payments: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -304,7 +304,7 @@ Payments: [
     "datatype": "String"
   }
 ],
-Reviews: [
+reviews: [
   {
     "field": "id",
     "datatype": "Integer"
@@ -334,7 +334,7 @@ Reviews: [
     "datatype": "DateTime"
   }
 ],
-SupportTickets: [
+supportTickets: [
   {
     "field": "id",
     "datatype": "Integer"
