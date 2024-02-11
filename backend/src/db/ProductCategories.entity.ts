@@ -6,8 +6,8 @@ export class ProductCategoriesEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-categoryDescription: string;
+  @Column("text",{nullable: true})
+description: string;
 
 
 }
