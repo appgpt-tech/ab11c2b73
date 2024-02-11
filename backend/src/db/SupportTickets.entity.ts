@@ -7,6 +7,9 @@ export class SupportTicketsEntity {
   id: number;
 
   @Column("integer",{nullable: true})
+ticketId: number;
+
+@Column("integer",{nullable: true})
 userId: number;
 
 @Column("integer",{nullable: true})
@@ -22,7 +25,7 @@ status: string;
 creationDate: Date;
 
 @Column("date",{nullable: true})
-lastUpdateDate: Date;
+resolutionDate: Date;
 
 
 }
