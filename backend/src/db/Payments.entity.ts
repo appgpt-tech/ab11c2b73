@@ -7,6 +7,9 @@ export class PaymentsEntity {
   id: number;
 
   @Column("integer",{nullable: true})
+paymentId: number;
+
+@Column("integer",{nullable: true})
 orderId: number;
 
 @Column("real",{nullable: true})
