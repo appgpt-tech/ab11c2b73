@@ -61,11 +61,16 @@ export const CustomersList = () => (
 <EmailField source="email" />
 <ReadOnlyPasswordField source="password" />
 <TextField source="name" />
-<TextField source="billingAddress" />
-<TextField source="defaultShippingAddress" />
+<NumberField source="age" />
+<TextField source="gender" />
+<NumberField source="weight" />
+<NumberField source="height" />
+
+
+
+
 <TextField source="country" />
-<TextField source="phone" />
-<ReferenceField source="cartId" reference="ShoppingCart"  /><EditButton />
+<TextField source="phone" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -78,11 +83,16 @@ export const CustomersEdit = () => (
 <TextInput source="email"   />
 <PasswordInput source="password"   />
 <TextInput source="name"   />
+<NumberInput source="age"   />
+<TextInput source="gender"   />
+<NumberInput source="weight"   />
+<NumberInput source="height"   />
+<TextInput source="healthConditions"   />
+<TextInput source="goals"   />
+<TextInput source="dietaryPreferences"   />
 <TextInput source="billingAddress"   />
-<TextInput source="defaultShippingAddress"   />
 <TextInput source="country"   />
 <TextInput source="phone"   />
-<ReferenceInput source="cartId"  reference="ShoppingCart"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -94,11 +104,16 @@ export const CustomersCreate = () => (
 <TextInput source="email"   />
 <PasswordInput source="password"   />
 <TextInput source="name"   />
+<NumberInput source="age"   />
+<TextInput source="gender"   />
+<NumberInput source="weight"   />
+<NumberInput source="height"   />
+<TextInput source="healthConditions"   />
+<TextInput source="goals"   />
+<TextInput source="dietaryPreferences"   />
 <TextInput source="billingAddress"   />
-<TextInput source="defaultShippingAddress"   />
 <TextInput source="country"   />
 <TextInput source="phone"   />
-<ReferenceInput source="cartId"  reference="ShoppingCart"   />
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -113,7 +128,12 @@ const ResourceFilters = [
 ,
 ,
 ,
-<ReferenceInput source="cartId" label="cartId" reference="ShoppingCart"   alwaysOn/>,
+,
+,
+,
+,
+,
+,
 
     ];
 
