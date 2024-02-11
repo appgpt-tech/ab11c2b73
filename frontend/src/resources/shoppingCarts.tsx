@@ -51,14 +51,14 @@ const ListActions = () => (
 );
 const shoppingCartsTitle = () => {
   const record = useRecordContext();
-  return <span>shoppingCarts {record ? `"${ record.customerId }"` : ""}</span>;
+  return <span>shoppingCarts {record ? `"${ record.id }"` : ""}</span>;
 };
 
 export const shoppingCartsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="customerId" />
-<NumberField source="productId" />
+          <ReferenceField source="customerId" reference="customers"  />
+<ReferenceField source="productId" reference="products"  />
 <NumberField source="price" />
 <NumberField source="quantity" /><EditButton />
 
@@ -69,8 +69,8 @@ export const shoppingCartsList = () => (
 export const shoppingCartsEdit = () => (
                     <Edit title={<shoppingCartsTitle />}>
                       <SimpleForm>
-                          <NumberInput source="customerId"   />
-<NumberInput source="productId"   />
+                          <ReferenceInput source="customerId"  reference="customers"   />
+<ReferenceInput source="productId"  reference="products"   />
 <NumberInput source="price"   />
 <NumberInput source="quantity"   />
                       </SimpleForm>
@@ -80,8 +80,8 @@ export const shoppingCartsEdit = () => (
 export const shoppingCartsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="customerId"   />
-<NumberInput source="productId"   />
+                                        <ReferenceInput source="customerId"  reference="customers"   />
+<ReferenceInput source="productId"  reference="products"   />
 <NumberInput source="price"   />
 <NumberInput source="quantity"   />
                                     </SimpleForm>
@@ -91,8 +91,8 @@ export const shoppingCartsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-,
-,
+<ReferenceInput source="customerId" label="customerId" reference="customers"   alwaysOn/>,
+<ReferenceInput source="productId" label="productId" reference="products"   alwaysOn/>,
 ,
 
     ];
