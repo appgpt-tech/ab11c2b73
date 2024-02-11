@@ -27,8 +27,8 @@ thumbnail: string;
 @Column("text",{nullable: true})
 image: string;
 
-@Column("text",{nullable: true})
-category: string;
+@Column("integer",{nullable: true})
+category: number;
 
 @Column("date",{nullable: true})
 createdDate: Date;
