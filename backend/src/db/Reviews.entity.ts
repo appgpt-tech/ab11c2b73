@@ -7,6 +7,9 @@ export class ReviewsEntity {
   id: number;
 
   @Column("integer",{nullable: true})
+reviewId: number;
+
+@Column("integer",{nullable: true})
 productId: number;
 
 @Column("integer",{nullable: true})
