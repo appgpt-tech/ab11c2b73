@@ -7,6 +7,9 @@ export class OrdersEntity {
   id: number;
 
   @Column("integer",{nullable: true})
+orderId: number;
+
+@Column("integer",{nullable: true})
 customerId: number;
 
 @Column("real",{nullable: true})
