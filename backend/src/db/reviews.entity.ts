@@ -15,7 +15,7 @@ customerId: number;
 @Column("integer",{nullable: true})
 vendorId: number;
 
-@Column("integer",{nullable: true})
+@Column("real",{nullable: true})
 rating: number;
 
 @Column("text",{nullable: true})
