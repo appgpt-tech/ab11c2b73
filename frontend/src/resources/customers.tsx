@@ -51,7 +51,7 @@ const ListActions = () => (
 );
 const customersTitle = () => {
   const record = useRecordContext();
-  return <span>customers {record ? `"${ record.email }"` : ""}</span>;
+  return <span>customers {record ? `"${ record.id }"` : ""}</span>;
 };
 
 export const customersList = () => (
