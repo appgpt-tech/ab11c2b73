@@ -51,13 +51,14 @@ const ListActions = () => (
 );
 const ReviewsTitle = () => {
   const record = useRecordContext();
-  return <span>Reviews {record ? `"${ record.rating }"` : ""}</span>;
+  return <span>Reviews {record ? `"${ record.reviewId }"` : ""}</span>;
 };
 
 export const ReviewsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <ReferenceField source="productId" reference="Products"  />
+          <NumberField source="reviewId" />
+<ReferenceField source="productId" reference="Products"  />
 <ReferenceField source="customerId" reference="Customers"  />
 <ReferenceField source="vendorId" reference="Vendors"  />
 <NumberField source="rating" />
@@ -71,7 +72,8 @@ export const ReviewsList = () => (
 export const ReviewsEdit = () => (
                     <Edit title={<ReviewsTitle />}>
                       <SimpleForm>
-                          <ReferenceInput source="productId"  reference="Products"   />
+                          <NumberInput source="reviewId"   />
+<ReferenceInput source="productId"  reference="Products"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <ReferenceInput source="vendorId"  reference="Vendors"   />
 <NumberInput source="rating"   />
@@ -84,7 +86,8 @@ export const ReviewsEdit = () => (
 export const ReviewsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <ReferenceInput source="productId"  reference="Products"   />
+                                        <NumberInput source="reviewId"   />
+<ReferenceInput source="productId"  reference="Products"   />
 <ReferenceInput source="customerId"  reference="Customers"   />
 <ReferenceInput source="vendorId"  reference="Vendors"   />
 <NumberInput source="rating"   />
@@ -100,6 +103,7 @@ const ResourceFilters = [
 <ReferenceInput source="productId" label="productId" reference="Products"   alwaysOn/>,
 <ReferenceInput source="customerId" label="customerId" reference="Customers"   alwaysOn/>,
 <ReferenceInput source="vendorId" label="vendorId" reference="Vendors"   alwaysOn/>,
+,
 ,
 ,
 
