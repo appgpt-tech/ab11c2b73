@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title= "ShopSphere Backoffice" />
-      <CardContent> An ecommerce backoffice site to support a seamless shopping experience web app called ShopSphere for users worldwide < /CardContent>
+      <CardHeader title= "ShopSphere" />
+      <CardContent> An ecommerce site to provide a seamless shopping experience for users worldwide < /CardContent>
       </Card>
     );
