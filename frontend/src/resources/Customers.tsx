@@ -51,19 +51,21 @@ const ListActions = () => (
 );
 const CustomersTitle = () => {
   const record = useRecordContext();
-  return <span>Customers {record ? `"${ record.email }"` : ""}</span>;
+  return <span>Customers {record ? `"${ record.customerId }"` : ""}</span>;
 };
 
 export const CustomersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <EmailField source="email" />
+          <NumberField source="customerId" />
+<EmailField source="email" />
 <ReadOnlyPasswordField source="password" />
 <TextField source="name" />
 <TextField source="billingAddress" />
-<TextField source="shippingAddress" />
+<TextField source="defaultShippingAddress" />
 <TextField source="country" />
-<TextField source="phone" /><EditButton />
+<TextField source="phone" />
+<ReferenceField source="cartId" reference="ShoppingCart"  /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -72,13 +74,15 @@ export const CustomersList = () => (
 export const CustomersEdit = () => (
                     <Edit title={<CustomersTitle />}>
                       <SimpleForm>
-                          <TextInput source="email"   />
+                          <NumberInput source="customerId"   />
+<TextInput source="email"   />
 <PasswordInput source="password"   />
 <TextInput source="name"   />
 <TextInput source="billingAddress"   />
-<TextInput source="shippingAddress"   />
+<TextInput source="defaultShippingAddress"   />
 <TextInput source="country"   />
 <TextInput source="phone"   />
+<ReferenceInput source="cartId"  reference="ShoppingCart"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -86,13 +90,15 @@ export const CustomersEdit = () => (
 export const CustomersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="email"   />
+                                        <NumberInput source="customerId"   />
+<TextInput source="email"   />
 <PasswordInput source="password"   />
 <TextInput source="name"   />
 <TextInput source="billingAddress"   />
-<TextInput source="shippingAddress"   />
+<TextInput source="defaultShippingAddress"   />
 <TextInput source="country"   />
 <TextInput source="phone"   />
+<ReferenceInput source="cartId"  reference="ShoppingCart"   />
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -106,6 +112,8 @@ const ResourceFilters = [
 ,
 ,
 ,
+,
+<ReferenceInput source="cartId" label="cartId" reference="ShoppingCart"   alwaysOn/>,
 
     ];
 
