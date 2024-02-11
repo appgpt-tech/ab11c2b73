@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -41,17 +51,19 @@ const ListActions = () => (
 );
 const CustomersTitle = () => {
   const record = useRecordContext();
-  return <span>Customers {record ? `"${ record.name }"` : ""}</span>;
+  return <span>Customers {record ? `"${ record.email }"` : ""}</span>;
 };
 
 export const CustomersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="customerId" />
-<TextField source="email" />
-<TextField source="password" />
+          <EmailField source="email" />
+<ReadOnlyPasswordField source="password" />
 <TextField source="name" />
-<NumberField source="id" /><EditButton />
+<TextField source="billingAddress" />
+<TextField source="shippingAddress" />
+<TextField source="country" />
+<TextField source="phone" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -60,11 +72,13 @@ export const CustomersList = () => (
 export const CustomersEdit = () => (
                     <Edit title={<CustomersTitle />}>
                       <SimpleForm>
-                          <TextInput source="customerId"   />
-<TextInput source="email"   />
-<TextInput source="password"   />
+                          <TextInput source="email"   />
+<PasswordInput source="password"   />
 <TextInput source="name"   />
-<NumberInput source="id"   disabled/>
+<TextInput source="billingAddress"   />
+<TextInput source="shippingAddress"   />
+<TextInput source="country"   />
+<TextInput source="phone"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -72,17 +86,22 @@ export const CustomersEdit = () => (
 export const CustomersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="customerId"   />
-<TextInput source="email"   />
-<TextInput source="password"   />
+                                        <TextInput source="email"   />
+<PasswordInput source="password"   />
 <TextInput source="name"   />
-<NumberInput source="id"   disabled/>
+<TextInput source="billingAddress"   />
+<TextInput source="shippingAddress"   />
+<TextInput source="country"   />
+<TextInput source="phone"   />
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
+,
+,
 ,
 ,
 ,
