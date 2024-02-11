@@ -6,9 +6,9 @@ import postgrestRestProvider from "@promitheus/ra-data-postgrest";
 import qs from 'qs';
 
 const fieldConfig = {
-    users: [
+    Users: [
   {
-    "field": "id",
+    "field": "userId",
     "datatype": "Integer"
   },
   {
@@ -26,11 +26,15 @@ const fieldConfig = {
   {
     "field": "role",
     "datatype": "String"
-  }
-],
-vendors: [
+  },
   {
     "field": "id",
+    "datatype": "Integer"
+  }
+],
+Vendors: [
+  {
+    "field": "vendorId",
     "datatype": "Integer"
   },
   {
@@ -48,11 +52,15 @@ vendors: [
   {
     "field": "password",
     "datatype": "String"
-  }
-],
-customers: [
+  },
   {
     "field": "id",
+    "datatype": "Integer"
+  }
+],
+Customers: [
+  {
+    "field": "customerId",
     "datatype": "Integer"
   },
   {
@@ -72,7 +80,7 @@ customers: [
     "datatype": "String"
   },
   {
-    "field": "shippingAddress",
+    "field": "defaultShippingAddress",
     "datatype": "String"
   },
   {
@@ -82,13 +90,17 @@ customers: [
   {
     "field": "phone",
     "datatype": "String"
-  }
-],
-inventory: [
+  },
+  {
+    "field": "cartId",
+    "datatype": "Integer"
+  },
   {
     "field": "id",
     "datatype": "Integer"
-  },
+  }
+],
+Inventory: [
   {
     "field": "productId",
     "datatype": "Integer"
@@ -98,17 +110,17 @@ inventory: [
     "datatype": "Integer"
   },
   {
-    "field": "vendorId",
+    "field": "lowStockThreshold",
     "datatype": "Integer"
   },
   {
-    "field": "lowStockThreshold",
+    "field": "id",
     "datatype": "Integer"
   }
 ],
-products: [
+Products: [
   {
-    "field": "id",
+    "field": "productId",
     "datatype": "Integer"
   },
   {
@@ -144,25 +156,37 @@ products: [
     "datatype": "Integer"
   },
   {
-    "field": "createdDate",
+    "field": "createDate",
     "datatype": "DateTime"
-  }
-],
-productCategories: [
+  },
+  {
+    "field": "stock",
+    "datatype": "Integer"
+  },
   {
     "field": "id",
+    "datatype": "Integer"
+  }
+],
+ProductCategories: [
+  {
+    "field": "categoryId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "productId",
     "datatype": "Integer"
   },
   {
     "field": "description",
     "datatype": "String"
-  }
-],
-discounts: [
+  },
   {
     "field": "id",
     "datatype": "Integer"
-  },
+  }
+],
+Discounts: [
   {
     "field": "productId",
     "datatype": "Integer"
@@ -182,11 +206,15 @@ discounts: [
   {
     "field": "discountPercent",
     "datatype": "Real"
-  }
-],
-shoppingCarts: [
+  },
   {
     "field": "id",
+    "datatype": "Integer"
+  }
+],
+ShoppingCart: [
+  {
+    "field": "cartId",
     "datatype": "Integer"
   },
   {
@@ -204,11 +232,15 @@ shoppingCarts: [
   {
     "field": "quantity",
     "datatype": "Integer"
-  }
-],
-orders: [
+  },
   {
     "field": "id",
+    "datatype": "Integer"
+  }
+],
+Orders: [
+  {
+    "field": "orderId",
     "datatype": "Integer"
   },
   {
@@ -254,13 +286,13 @@ orders: [
   {
     "field": "trackingNo",
     "datatype": "String"
-  }
-],
-orderDetails: [
+  },
   {
     "field": "id",
     "datatype": "Integer"
-  },
+  }
+],
+OrderDetails: [
   {
     "field": "orderId",
     "datatype": "Integer"
@@ -276,11 +308,15 @@ orderDetails: [
   {
     "field": "quantity",
     "datatype": "Integer"
-  }
-],
-payments: [
+  },
   {
     "field": "id",
+    "datatype": "Integer"
+  }
+],
+Payments: [
+  {
+    "field": "paymentId",
     "datatype": "Integer"
   },
   {
@@ -302,11 +338,15 @@ payments: [
   {
     "field": "paymentStatus",
     "datatype": "String"
-  }
-],
-reviews: [
+  },
   {
     "field": "id",
+    "datatype": "Integer"
+  }
+],
+Reviews: [
+  {
+    "field": "reviewId",
     "datatype": "Integer"
   },
   {
@@ -332,11 +372,15 @@ reviews: [
   {
     "field": "date",
     "datatype": "DateTime"
-  }
-],
-supportTickets: [
+  },
   {
     "field": "id",
+    "datatype": "Integer"
+  }
+],
+SupportTickets: [
+  {
+    "field": "ticketId",
     "datatype": "Integer"
   },
   {
@@ -360,8 +404,12 @@ supportTickets: [
     "datatype": "DateTime"
   },
   {
-    "field": "lastUpdateDate",
+    "field": "resolutionDate",
     "datatype": "DateTime"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
   }
 ]
 };
