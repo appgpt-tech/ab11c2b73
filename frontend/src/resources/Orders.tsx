@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -41,21 +51,23 @@ const ListActions = () => (
 );
 const OrdersTitle = () => {
   const record = useRecordContext();
-  return <span>Orders {record ? `"${ record.id }"` : ""}</span>;
+  return <span>Orders {record ? `"${ record.customerId }"` : ""}</span>;
 };
 
 export const OrdersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="orderId" />
-<TextField source="customerId" />
-<TextField source="amount" />
+          <ReferenceField source="customerId" reference="Customers"  />
+<NumberField source="totalAmount" />
+<NumberField source="vat" />
+<NumberField source="productTotalAmount" />
+<NumberField source="shippingCost" />
 <TextField source="shippingAddress" />
 <TextField source="orderAddress" />
-<TextField source="orderEmail" />
-<TextField source="orderDate" />
+<EmailField source="orderEmail" />
+<DateField source="orderDate" />
 <TextField source="orderStatus" />
-<NumberField source="id" /><EditButton />
+<TextField source="trackingNo" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -64,15 +76,17 @@ export const OrdersList = () => (
 export const OrdersEdit = () => (
                     <Edit title={<OrdersTitle />}>
                       <SimpleForm>
-                          <TextInput source="orderId"   />
-<TextInput source="customerId"   />
-<TextInput source="amount"   />
+                          <ReferenceInput source="customerId"  reference="Customers"   />
+<NumberInput source="totalAmount"   />
+<NumberInput source="vat"   />
+<NumberInput source="productTotalAmount"   />
+<NumberInput source="shippingCost"   />
 <TextInput source="shippingAddress"   />
 <TextInput source="orderAddress"   />
 <TextInput source="orderEmail"   />
-<TextInput source="orderDate"   />
+<DateInput source="orderDate"   />
 <TextInput source="orderStatus"   />
-<NumberInput source="id"   disabled/>
+<TextInput source="trackingNo"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -80,21 +94,26 @@ export const OrdersEdit = () => (
 export const OrdersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="orderId"   />
-<TextInput source="customerId"   />
-<TextInput source="amount"   />
+                                        <ReferenceInput source="customerId"  reference="Customers"   />
+<NumberInput source="totalAmount"   />
+<NumberInput source="vat"   />
+<NumberInput source="productTotalAmount"   />
+<NumberInput source="shippingCost"   />
 <TextInput source="shippingAddress"   />
 <TextInput source="orderAddress"   />
 <TextInput source="orderEmail"   />
-<TextInput source="orderDate"   />
+<DateInput source="orderDate"   />
 <TextInput source="orderStatus"   />
-<NumberInput source="id"   disabled/>
+<TextInput source="trackingNo"   />
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
+<ReferenceInput source="customerId" label="customerId" reference="Customers"   alwaysOn/>,
+,
 ,
 ,
 ,
