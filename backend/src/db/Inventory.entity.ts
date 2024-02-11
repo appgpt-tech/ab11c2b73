@@ -13,9 +13,6 @@ productId: number;
 quantity: number;
 
 @Column("integer",{nullable: true})
-vendorId: number;
-
-@Column("integer",{nullable: true})
 lowStockThreshold: number;
 
 
