@@ -18,20 +18,35 @@ password: string;
 @Column("text",{nullable: true})
 name: string;
 
-@Column("text",{nullable: true})
-billingAddress: string;
+@Column("integer",{nullable: true})
+age: number;
 
 @Column("text",{nullable: true})
-defaultShippingAddress: string;
+gender: string;
+
+@Column("real",{nullable: true})
+weight: number;
+
+@Column("real",{nullable: true})
+height: number;
+
+@Column("text",{nullable: true})
+healthConditions: string;
+
+@Column("text",{nullable: true})
+goals: string;
+
+@Column("text",{nullable: true})
+dietaryPreferences: string;
+
+@Column("text",{nullable: true})
+billingAddress: string;
 
 @Column("text",{nullable: true})
 country: string;
 
 @Column("text",{nullable: true})
 phone: string;
-
-@Column("integer",{nullable: true})
-cartId: number;
 
 
 }
