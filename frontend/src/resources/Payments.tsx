@@ -51,13 +51,14 @@ const ListActions = () => (
 );
 const PaymentsTitle = () => {
   const record = useRecordContext();
-  return <span>Payments {record ? `"${ record.orderId }"` : ""}</span>;
+  return <span>Payments {record ? `"${ record.paymentId }"` : ""}</span>;
 };
 
 export const PaymentsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <ReferenceField source="orderId" reference="Orders"  />
+          <NumberField source="paymentId" />
+<ReferenceField source="orderId" reference="Orders"  />
 <NumberField source="amount" />
 <TextField source="paymentMethod" />
 <DateField source="paymentDate" />
@@ -70,7 +71,8 @@ export const PaymentsList = () => (
 export const PaymentsEdit = () => (
                     <Edit title={<PaymentsTitle />}>
                       <SimpleForm>
-                          <ReferenceInput source="orderId"  reference="Orders"   />
+                          <NumberInput source="paymentId"   />
+<ReferenceInput source="orderId"  reference="Orders"   />
 <NumberInput source="amount"   />
 <TextInput source="paymentMethod"   />
 <DateInput source="paymentDate"   />
@@ -82,7 +84,8 @@ export const PaymentsEdit = () => (
 export const PaymentsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <ReferenceInput source="orderId"  reference="Orders"   />
+                                        <NumberInput source="paymentId"   />
+<ReferenceInput source="orderId"  reference="Orders"   />
 <NumberInput source="amount"   />
 <TextInput source="paymentMethod"   />
 <DateInput source="paymentDate"   />
@@ -95,6 +98,7 @@ const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
 <ReferenceInput source="orderId" label="orderId" reference="Orders"   alwaysOn/>,
+,
 ,
 ,
 ,
