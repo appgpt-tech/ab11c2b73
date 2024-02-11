@@ -51,7 +51,7 @@ const ListActions = () => (
 );
 const usersTitle = () => {
   const record = useRecordContext();
-  return <span>users {record ? `"${ record.name }"` : ""}</span>;
+  return <span>users {record ? `"${ record.id }"` : ""}</span>;
 };
 
 export const usersList = () => (
