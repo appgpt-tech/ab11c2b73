@@ -51,13 +51,15 @@ const ListActions = () => (
 );
 const ProductCategoriesTitle = () => {
   const record = useRecordContext();
-  return <span>ProductCategories {record ? `"${ record.description }"` : ""}</span>;
+  return <span>ProductCategories {record ? `"${ record.categoryId }"` : ""}</span>;
 };
 
 export const ProductCategoriesList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="description" /><EditButton />
+          <NumberField source="categoryId" />
+<ReferenceField source="productId" reference="Products"  />
+<EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -66,7 +68,9 @@ export const ProductCategoriesList = () => (
 export const ProductCategoriesEdit = () => (
                     <Edit title={<ProductCategoriesTitle />}>
                       <SimpleForm>
-                          <TextInput source="description"   />
+                          <NumberInput source="categoryId"   />
+<ReferenceInput source="productId"  reference="Products"   />
+<TextInput source="description"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -74,13 +78,17 @@ export const ProductCategoriesEdit = () => (
 export const ProductCategoriesCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="description"   />
+                                        <NumberInput source="categoryId"   />
+<ReferenceInput source="productId"  reference="Products"   />
+<TextInput source="description"   />
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
+<ReferenceInput source="productId" label="productId" reference="Products"   alwaysOn/>,
 ,
 
     ];
