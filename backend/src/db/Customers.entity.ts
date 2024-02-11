@@ -6,17 +6,26 @@ export class CustomersEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-customerId: string;
-
-@Column({nullable: true})
+  @Column("text",{nullable: true})
 email: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 password: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 name: string;
+
+@Column("text",{nullable: true})
+billingAddress: string;
+
+@Column("text",{nullable: true})
+shippingAddress: string;
+
+@Column("text",{nullable: true})
+country: string;
+
+@Column("text",{nullable: true})
+phone: string;
 
 
 }
