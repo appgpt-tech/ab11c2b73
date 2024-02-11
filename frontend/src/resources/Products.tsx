@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,18 +57,15 @@ const ProductsTitle = () => {
 export const ProductsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="productId" />
-<TextField source="sku" />
+          <ReferenceField source="vendorId" reference="Vendors"  />
 <TextField source="name" />
-<TextField source="price" />
-<TextField source="weight" />
-<TextField source="description" />
-<TextField source="thumbnail" />
-<TextField source="image" />
-<TextField source="categoryId" />
-<TextField source="createDate" />
-<TextField source="stock" />
-<NumberField source="id" /><EditButton />
+<NumberField source="price" />
+<NumberField source="weight" />
+
+<ImageField source="thumbnail" />
+<ImageField source="image" />
+<TextField source="category" />
+<DateField source="createdDate" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -67,18 +74,15 @@ export const ProductsList = () => (
 export const ProductsEdit = () => (
                     <Edit title={<ProductsTitle />}>
                       <SimpleForm>
-                          <TextInput source="productId"   />
-<TextInput source="sku"   />
+                          <ReferenceInput source="vendorId"  reference="Vendors"   />
 <TextInput source="name"   />
-<TextInput source="price"   />
-<TextInput source="weight"   />
+<NumberInput source="price"   />
+<NumberInput source="weight"   />
 <TextInput source="description"   />
-<TextInput source="thumbnail"   />
-<TextInput source="image"   />
-<TextInput source="categoryId"   />
-<TextInput source="createDate"   />
-<TextInput source="stock"   />
-<NumberInput source="id"   disabled/>
+<ImageInput source="thumbnail"   />
+<ImageInput source="image"   />
+<TextInput source="category"   />
+<DateInput source="createdDate"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -86,18 +90,15 @@ export const ProductsEdit = () => (
 export const ProductsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="productId"   />
-<TextInput source="sku"   />
+                                        <ReferenceInput source="vendorId"  reference="Vendors"   />
 <TextInput source="name"   />
-<TextInput source="price"   />
-<TextInput source="weight"   />
+<NumberInput source="price"   />
+<NumberInput source="weight"   />
 <TextInput source="description"   />
-<TextInput source="thumbnail"   />
-<TextInput source="image"   />
-<TextInput source="categoryId"   />
-<TextInput source="createDate"   />
-<TextInput source="stock"   />
-<NumberInput source="id"   disabled/>
+<ImageInput source="thumbnail"   />
+<ImageInput source="image"   />
+<TextInput source="category"   />
+<DateInput source="createdDate"   />
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -105,9 +106,7 @@ export const ProductsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-,
-,
-,
+<ReferenceInput source="vendorId" label="vendorId" reference="Vendors"   alwaysOn/>,
 ,
 ,
 ,
