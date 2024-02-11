@@ -9,30 +9,18 @@ import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
 import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
-import { VendorsList, VendorsCreate, VendorsEdit} from "./resources/Vendors";
 import { CustomersList, CustomersCreate, CustomersEdit} from "./resources/Customers";
-import { InventoryList, InventoryCreate, InventoryEdit} from "./resources/Inventory";
-import { ProductsList, ProductsCreate, ProductsEdit} from "./resources/Products";
-import { ProductCategoriesList, ProductCategoriesCreate, ProductCategoriesEdit} from "./resources/ProductCategories";
-import { DiscountsList, DiscountsCreate, DiscountsEdit} from "./resources/Discounts";
-import { ShoppingCartList, ShoppingCartCreate, ShoppingCartEdit} from "./resources/ShoppingCart";
-import { OrdersList, OrdersCreate, OrdersEdit} from "./resources/Orders";
-import { OrderDetailsList, OrderDetailsCreate, OrderDetailsEdit} from "./resources/OrderDetails";
-import { PaymentsList, PaymentsCreate, PaymentsEdit} from "./resources/Payments";
-import { ReviewsList, ReviewsCreate, ReviewsEdit} from "./resources/Reviews";
+import { WorkoutsList, WorkoutsCreate, WorkoutsEdit} from "./resources/Workouts";
+import { NutritionList, NutritionCreate, NutritionEdit} from "./resources/Nutrition";
+import { HealthMetricsList, HealthMetricsCreate, HealthMetricsEdit} from "./resources/HealthMetrics";
+import { NotificationsList, NotificationsCreate, NotificationsEdit} from "./resources/Notifications";
 import { SupportTicketsList, SupportTicketsCreate, SupportTicketsEdit} from "./resources/SupportTickets";
-import UsersIcon from "@mui/icons-material/Person";
-import VendorsIcon from "@mui/icons-material/Store";
+import UsersIcon from "@mui/icons-material/People";
 import CustomersIcon from "@mui/icons-material/People";
-import InventoryIcon from "@mui/icons-material/Inventory";
-import ProductsIcon from "@mui/icons-material/ShoppingCart";
-import ProductCategoriesIcon from "@mui/icons-material/Category";
-import DiscountsIcon from "@mui/icons-material/LocalOffer";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import OrdersIcon from "@mui/icons-material/Receipt";
-import OrderDetailsIcon from "@mui/icons-material/Receipt";
-import PaymentsIcon from "@mui/icons-material/Payment";
-import ReviewsIcon from "@mui/icons-material/RateReview";
+import WorkoutsIcon from "@mui/icons-material/FitnessCenter";
+import NutritionIcon from "@mui/icons-material/Restaurant";
+import HealthMetricsIcon from "@mui/icons-material/Addchart";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import SupportTicketsIcon from "@mui/icons-material/SupportAgent"; 
 // SUPERTOKENS
 import React from "react";
@@ -101,72 +89,36 @@ create={UsersCreate}
 edit={UsersEdit}
 recordRepresentation="userId"
 icon={UsersIcon}/>
-<Resource name="Vendors" options={{label:"Vendors"}} 
-list={VendorsList}
-create={VendorsCreate}
-edit={VendorsEdit}
-recordRepresentation="vendorId"
-icon={VendorsIcon}/>
 <Resource name="Customers" options={{label:"Customers"}} 
 list={CustomersList}
 create={CustomersCreate}
 edit={CustomersEdit}
 recordRepresentation="customerId"
 icon={CustomersIcon}/>
-<Resource name="Inventory" options={{label:"Inventory"}} 
-list={InventoryList}
-create={InventoryCreate}
-edit={InventoryEdit}
-recordRepresentation="productId"
-icon={InventoryIcon}/>
-<Resource name="Products" options={{label:"Products"}} 
-list={ProductsList}
-create={ProductsCreate}
-edit={ProductsEdit}
-recordRepresentation="productId"
-icon={ProductsIcon}/>
-<Resource name="ProductCategories" options={{label:"Product Categories"}} 
-list={ProductCategoriesList}
-create={ProductCategoriesCreate}
-edit={ProductCategoriesEdit}
-recordRepresentation="categoryId"
-icon={ProductCategoriesIcon}/>
-<Resource name="Discounts" options={{label:"Discounts"}} 
-list={DiscountsList}
-create={DiscountsCreate}
-edit={DiscountsEdit}
-recordRepresentation="productId"
-icon={DiscountsIcon}/>
-<Resource name="ShoppingCart" options={{label:"Shopping Cart"}} 
-list={ShoppingCartList}
-create={ShoppingCartCreate}
-edit={ShoppingCartEdit}
-recordRepresentation="cartId"
-icon={ShoppingCartIcon}/>
-<Resource name="Orders" options={{label:"Orders"}} 
-list={OrdersList}
-create={OrdersCreate}
-edit={OrdersEdit}
-recordRepresentation="orderId"
-icon={OrdersIcon}/>
-<Resource name="OrderDetails" options={{label:"Order Details"}} 
-list={OrderDetailsList}
-create={OrderDetailsCreate}
-edit={OrderDetailsEdit}
-recordRepresentation="orderId"
-icon={OrderDetailsIcon}/>
-<Resource name="Payments" options={{label:"Payments"}} 
-list={PaymentsList}
-create={PaymentsCreate}
-edit={PaymentsEdit}
-recordRepresentation="paymentId"
-icon={PaymentsIcon}/>
-<Resource name="Reviews" options={{label:"Reviews"}} 
-list={ReviewsList}
-create={ReviewsCreate}
-edit={ReviewsEdit}
-recordRepresentation="reviewId"
-icon={ReviewsIcon}/>
+<Resource name="Workouts" options={{label:"Workouts"}} 
+list={WorkoutsList}
+create={WorkoutsCreate}
+edit={WorkoutsEdit}
+recordRepresentation="workoutId"
+icon={WorkoutsIcon}/>
+<Resource name="Nutrition" options={{label:"Nutrition"}} 
+list={NutritionList}
+create={NutritionCreate}
+edit={NutritionEdit}
+recordRepresentation="mealId"
+icon={NutritionIcon}/>
+<Resource name="HealthMetrics" options={{label:"Health Metrics"}} 
+list={HealthMetricsList}
+create={HealthMetricsCreate}
+edit={HealthMetricsEdit}
+recordRepresentation="metricId"
+icon={HealthMetricsIcon}/>
+<Resource name="Notifications" options={{label:"Notifications"}} 
+list={NotificationsList}
+create={NotificationsCreate}
+edit={NotificationsEdit}
+recordRepresentation="notificationId"
+icon={NotificationsIcon}/>
 <Resource name="SupportTickets" options={{label:"Support Tickets"}} 
 list={SupportTicketsList}
 create={SupportTicketsCreate}
