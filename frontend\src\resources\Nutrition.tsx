@@ -62,7 +62,7 @@ export const NutritionList = () => (
 <TextField source="foodItem" />
 <NumberField source="quantity" />
 <NumberField source="calories" />
-
+<TextField source="macronutrients" />
 <DateField source="date" /><EditButton />
 
         </DatagridConfigurable>
