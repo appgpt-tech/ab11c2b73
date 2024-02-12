@@ -15,11 +15,11 @@ import { NutritionList, NutritionCreate, NutritionEdit} from "./resources/Nutrit
 import { HealthMetricsList, HealthMetricsCreate, HealthMetricsEdit} from "./resources/HealthMetrics";
 import { NotificationsList, NotificationsCreate, NotificationsEdit} from "./resources/Notifications";
 import { SupportTicketsList, SupportTicketsCreate, SupportTicketsEdit} from "./resources/SupportTickets";
-import UsersIcon from "@mui/icons-material/People";
+import UsersIcon from "@mui/icons-material/Person";
 import CustomersIcon from "@mui/icons-material/People";
 import WorkoutsIcon from "@mui/icons-material/FitnessCenter";
-import NutritionIcon from "@mui/icons-material/Restaurant";
-import HealthMetricsIcon from "@mui/icons-material/Addchart";
+import NutritionIcon from "@mui/icons-material/Fastfood";
+import HealthMetricsIcon from "@mui/icons-material/Healing";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SupportTicketsIcon from "@mui/icons-material/SupportAgent"; 
 // SUPERTOKENS
